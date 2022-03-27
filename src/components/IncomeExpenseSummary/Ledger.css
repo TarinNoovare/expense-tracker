@@ -1,0 +1,53 @@
+.ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.ledger-container {
+    padding-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    border-top: 0.5px solid rgb(87, 87, 87);
+    border-bottom: 0.5px solid rgb(87, 87, 87);
+}
+
+.ledger-container__datetime {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    grid-template-areas: "date day" "date month-year";
+}
+
+.ledger-container__datetime-date {
+    font-size: 1.5em;
+    font-weight: 500;
+    grid-area: date;
+}
+
+.ledger-container__datetime-day {
+    font-size: 0.7em;
+    font-weight: 700;
+    color: rgb(109, 101, 101);
+    grid-area: day;
+    text-align: start;
+}
+
+.ledger-container__datetime-month-year {
+    font-size: 0.7em;
+    color: rgb(109, 101, 101);
+    grid-area: month-year;
+    text-align: start;
+}
+
+.ledger-container__ledger-items {
+    width: 100%;
+}
+
+.ledger-container__item {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
