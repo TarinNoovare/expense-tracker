@@ -1,0 +1,42 @@
+.balance-wallet-contatiner {
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+}
+
+.balance-wallet-contatiner__profile-picure {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    /* object-fit: fill; */
+}
+
+.balance-wallet-contatiner__left {
+    flex: 1;
+}
+
+.balance-wallet-contatiner__center {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 6;
+}
+
+.balance-wallet-contatiner__name {
+    color: gray;
+    font-size: 0.8em;
+}
+
+.balance-wallet-contatiner__balance {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.balance-wallet-contatiner__right {
+    flex: 1;
+}
