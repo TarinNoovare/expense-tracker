@@ -40,13 +40,24 @@ function Ledger(props) {
     const monthOfYear = MONTHS_OF_YEAR[dateTimeData.getMonth()];
     const yearData = dateTimeData.getFullYear();
 
+    const totalAmount = ledgerItems
+      .map((em) => {
+        return em.price * (em.type === "expense" ? -1 : 1);
+      })
+      .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
     ledgerComponents.push(
       <div className="ledger-container" key={datetimeKey}>
-        <div className="ledger-container__datetime">
-          <div className="ledger-container__datetime-date">{dateData}</div>
-          <div className="ledger-container__datetime-day">{dayOfWeek}</div>
-          <div className="ledger-container__datetime-month-year">
-            {monthOfYear} {yearData}
+        <div className="ledger-container__upper">
+          <div className="ledger-container__datetime">
+            <div className="ledger-container__datetime-date">{dateData}</div>
+            <div className="ledger-container__datetime-day">{dayOfWeek}</div>
+            <div className="ledger-container__datetime-month-year">
+              {monthOfYear} {yearData}
+            </div>
+          </div>
+          <div className="ledger-container__total-amount">
+            <PriceFormatter value={totalAmount} isSignPrefix={true} />
           </div>
         </div>
         <div className="ledger-container__ledger-items">
