@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import TotalBalance from "./components/Wallet/TotalBalance";
+import IncomeExpenseSummary from "./components/IncomeExpenseSummary/IncomeExpenseSummary";
+import Ledger from "./components/IncomeExpenseSummary/Ledger";
+
+import DummyProfileImage from "./resources/myself.jpeg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App__wallet-header">
+        <TotalBalance profileImage={DummyProfileImage} />
+        <IncomeExpenseSummary />
       </header>
+      <main className="App__wallet-ledger">
+        <Ledger />
+      </main>
     </div>
   );
 }
